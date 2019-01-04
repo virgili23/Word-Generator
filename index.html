@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="styleshet" type="text/css" href="style.css">
+  <style>
+      * {
+          text-align: center;
+          font-family: sans-serif;
+
+      }
+      .container {
+          padding: 50px 0;
+          width: 99vw;
+          overflow: none;
+          margin: auto;
+          position: absolute;
+          /* background-color: purple; */
+          justify-content: center;
+          display: flex;
+         
+      }
+      #block-one {
+          background-color: blue;
+          height: 50px;
+          width: 10vw;
+          margin-right: 5px;
+          padding: 20px;
+      }
+      #block-two {
+          background-color: red;
+          height: 50px;
+          width: 10vw;
+          margin-left: 5px;
+          padding: 20px;
+      }
+      .div {
+          color: white;
+          font-size: 2em;
+      }
+
+      #reset {
+          z-index: 1;
+          margin-top: 30vh;
+          color: white;
+          background: green;
+          border-radius: 3px;
+          border: 1px solid green;
+          cursor: pointer;
+          padding: 20px;
+          font-size: 2em;
+      }
+  </style>
+</head>
+
+<body>
+
+    <h1>Curseword Generator</h1>
+
+
+    <div class="container">
+        <div class="div" id="block-one"></div>
+        <div class="div" id="block-two"></div>
+    </div>
+
+    <button id="reset">Generate</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    // var wordOne = ["Cock", "Dick", "Penis", "Cunt", "Titty", "Crap", "Shit", "Pussy", "Ass"];
+    var wordOne = ["Banana", "Apple", "Pear", "Peach"];
+
+    var wordTwo = ["Swinger", "Sucker", "Wanker", "Gargler", "Feeder", "Licker", "Eater", "Handler", "Herder", "Sniffer", "Wiper"];
+
+    var blockOne = $('#block-one');
+    var blockTwo = $('#block-two');
+
+    // Generate words
+    // alert(Math.floor(Math.random() * wordOne.length));
+    
+
+    // var curseOne = wordOne[Math.floor(Math.random() * wordOne.length)];
+    // var curseTwo = wordTwo[Math.floor(Math.random() * wordTwo.length)];
+
+    // blockOne.append(curseOne);
+    // blockTwo.append(curseTwo);
+
+
+    $('#reset').on("click", function() {
+        blockOne.empty();
+        blockTwo.empty();
+        
+        var curseOne = wordOne[Math.floor(Math.random() * wordOne.length)];
+        var curseTwo = wordTwo[Math.floor(Math.random() * wordTwo.length)];
+
+        blockOne.append(curseOne);
+        blockTwo.append(curseTwo);
+
+    })
+    
+
+    
+
+
+</script>
+
+</body>
+</html>
