@@ -39,17 +39,22 @@
           font-size: 2em;
       }
 
-      #reset {
+      .block {
           z-index: 1;
-          margin-top: 30vh;
+          margin-top: 10vh;
           color: white;
-          background: green;
+          /* background: green; */
           border-radius: 3px;
-          border: 1px solid green;
+          border: 2px solid gray;
           cursor: pointer;
           padding: 20px;
           font-size: 2em;
       }
+
+      h1 {
+          font-size: 3em;
+      }
+
       @media only screen and (max-width: 980px) {
           #block-one {
             width: 30vw;
@@ -76,17 +81,17 @@
 
 
     <div class="container">
-        <div class="div" id="block-one"></div>
-        <div class="div" id="block-two"></div>
+        <div class="div block" id="block-one"></div>
+        <div class="div block" id="block-two"></div>
     </div>
 
-    <button id="reset">Generate</button>
+    <!-- <button class="block">Generate</button> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 
-    // var wordOne = ["Cock", "Dick", "Penis", "Cunt", "Titty", "Crap", "Shit", "Pussy", "Ass"];
-    var wordOne = ["Banana", "Apple", "Pear", "Peach"];
+    var wordOne = ["Cock", "Dick", "Penis", "Cunt", "Titty", "Crap", "Shit", "Pussy", "Ass"];
+    // var wordOne = ["Banana", "Apple", "Pear", "Peach"];
 
     var wordTwo = ["Swinger", "Sucker", "Wanker", "Gargler", "Feeder", "Licker", "Eater", "Handler", "Herder", "Sniffer", "Wiper"];
 
@@ -104,17 +109,29 @@
     // blockTwo.append(curseTwo);
 
 
-    $('#reset').on("click", function() {
-        blockOne.empty();
-        blockTwo.empty();
+    // $('#reset').on("click", function() {
+    //     blockOne.empty();
+    //     blockTwo.empty();
         
+    //     var curseOne = wordOne[Math.floor(Math.random() * wordOne.length)];
+    //     var curseTwo = wordTwo[Math.floor(Math.random() * wordTwo.length)];
+
+    //     blockOne.append(curseOne);
+    //     blockTwo.append(curseTwo);
+
+    // });
+
+    $('#block-one').on("click", function() {
+        blockOne.empty();
         var curseOne = wordOne[Math.floor(Math.random() * wordOne.length)];
-        var curseTwo = wordTwo[Math.floor(Math.random() * wordTwo.length)];
-
         blockOne.append(curseOne);
-        blockTwo.append(curseTwo);
+    });
 
-    })
+    $('#block-two').on("click", function() {
+        blockTwo.empty();
+        var curseTwo = wordOne[Math.floor(Math.random() * wordOne.length)];
+        blockTwo.append(curseTwo);
+    });
     
 
     
